@@ -1,0 +1,41 @@
+DROP DATABASE IF EXISTS meal_plan_db;
+CREATE DATABASE meal_plan_db;
+
+USE meal_plan_db;
+
+CREATE TABLE users(
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+username VARCHAR(100) NOT NULL,
+plan INT NOT NULL
+);
+
+CREATE TABLE recipes(
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+name VARCHAR(100)NOT NULL,
+ingredient MEDIUMTEXT NOT NULL,
+instructions LONGTEXT NOT NULL,
+user INT NOT NULL
+);
+
+
+CREATE TABLE plans(
+id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+recipe1 INT,
+recipe2 INT,
+recipe3 INT,
+recipe4 INT,
+recipe5 INT,
+recipe6 INT,
+recipe7 INT,
+FOREIGN KEY (recipe1) REFERENCES recipes(id),
+FOREIGN KEY (recipe2) REFERENCES recipes(id),
+FOREIGN KEY (recipe3) REFERENCES recipes(id),
+FOREIGN KEY (recipe4) REFERENCES recipes(id),
+FOREIGN KEY (recipe5) REFERENCES recipes(id),
+FOREIGN KEY (recipe6) REFERENCES recipes(id),
+FOREIGN KEY (recipe7) REFERENCES recipes(id)
+);
+ALTER TABLE users
+ADD FOREIGN KEY (plan) REFERENCES plans(id) ON DELETE CASCADE;
+ALTER TABLE recipes 
+ADD FOREIGN KEY (user) REFERENCES users(id);
