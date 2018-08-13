@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -22,9 +23,6 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
 
@@ -34,15 +32,38 @@ if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
 
-// Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
+
 
 module.exports = app;
+var recipes = []
+
+function Recipe(ingredientArr, stepArr, name, originalUser){
+    this.ingredientArr = ingredientArr;
+    this.stepArr = stepArr;
+    this.name = name;
+    if(originalUser){
+        this.originalUser = originalUser;
+    }
+    recipes.push(this);
+}
+function Ingredient(amount, measure, name){
+    this.amount = amount;
+    this.measure = measure;
+    this.name = name;
+}
+var users = [
+    "Carol",
+    "Colton",
+    "Micheal"
+]
+new Recipe([new Ingredient(1, null, "premade burrito")], ["Microwave burrito", "Wait for it to cool"], "microwave burrito", 1);
+
+
+require("./routes/html-routes.js")
+require("./routes/api-routes")
+
+//db.sequelize.sync().then(function(){
+    app.listen(PORT, function(){
+        console.log("app listening at localhost:" + PORT)
+    })
+//})
