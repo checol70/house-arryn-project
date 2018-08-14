@@ -1,0 +1,23 @@
+<h1>Recipes!</h1>
+
+<h2>List of Recipes!</h2>
+{{!-- Object received from the get/code { ingredientArr:[ { amount: measure: name: }] stepArr:[ // this is full of strings
+in order. ], name://string for the recipe name. originalUser: // int for the users array } --}}
+
+<ul>
+  {{#each recipes}}
+  <p>
+    Recipe name: {{name}};
+  </p>
+  <p> Ingredients</p>
+  {{#each ingredientArr}}
+  <p>
+    {{amount}} + " " + {{measure}} + " " + {{name}};
+  </p>
+  <p> Steps</p>
+  {{#each stepArr}}
+  <p> step </p>
+  {{/each}}
+  {{/each}} 
+  {{/each}}
+</ul>
