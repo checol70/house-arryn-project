@@ -2,7 +2,11 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
     "database": "house",
+=======
+    "database": "database_development",
+>>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
