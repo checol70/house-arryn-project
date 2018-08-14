@@ -3,8 +3,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-
+var recipes = require("./models/recipes.js")
 // var db = require("./models");
+var recipArr = recipes.recipes;
+console.log(recipArr)
 
 var app = express();
 var PORT = process.env.PORT || 3000;
