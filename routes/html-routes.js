@@ -10,6 +10,7 @@ module.exports = function(app){
     })
 
     app.get("/recipes", function(req,res){
+<<<<<<< HEAD
         //  var hbsObject ={
         //      recipes: recipes.recipes
         //  }
@@ -17,6 +18,15 @@ module.exports = function(app){
         res.json(recipes.recipes)
         res.end()
         // res.render("recipeList", hbsObject)
+=======
+        var hbsObject ={
+          recipes: recipes.recipes
+        }
+        console.log(console.log(recipes.recipes))
+        // res.json(recipes.recipes)
+        // res.end()
+        res.render("layouts/recipeList", hbsObject)
+>>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
     })
     app.get("/add/recipes", function(req, res){
         res.sendFile("add.html")

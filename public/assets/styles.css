@@ -29,7 +29,7 @@
   }
   .hero.is-info {
     background-color: white;
-    color: black;
+    
 }
 .navbar-item{
 
@@ -39,3 +39,11 @@
   #fc6d26;
 
 }
+<<<<<<< HEAD
+=======
+.recipe-title {
+  font-family: cursive;
+  font-size: 125%;
+  color: black;
+}
+>>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
