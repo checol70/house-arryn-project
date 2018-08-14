@@ -1,16 +1,22 @@
-module.exports = function(sequelize, DataTypes) {
-    var mealPlan = sequelize.define("mealPlan", {
-      // Giving the Author model a name of type STRING
-      name: DataTypes.STRING
+module.exports = function (sequelize, DataTypes) {
+  var MealPlan = sequelize.define("MealPlan", {
+    name: DataTypes.STRING,
+    sun: DataTypes.INTEGER,
+    mon: DataTypes.INTEGER,
+    tue: DataTypes.INTEGER,
+    wed: DataTypes.INTEGER,
+    thur: DataTypes.INTEGER,
+    fri: DataTypes.INTEGER,
+    sat: DataTypes.INTEGER
+  });
+
+  MealPlan.associate = function (models) {
+    MealPlan.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
     });
-  
-    mealPlan.associate = function(models) {
-      // Associating Author with Posts
-      // When an Author is deleted, also delete any associated Posts
-      mealPlan.hasMany(models.recipes, {
-        onDelete: "cascade"
-      });
-    };
-  
-    return mealPlan;
   };
+
+  return MealPlan;
+};
