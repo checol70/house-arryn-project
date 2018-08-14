@@ -10,13 +10,13 @@ module.exports = function(app){
     })
 
     app.get("/recipes", function(req,res){
-        //  var hbsObject ={
-        //      recipes: recipes.recipes
-        //  }
+        var hbsObject ={
+          recipes: recipes.recipes
+        }
         console.log(console.log(recipes.recipes))
-        res.json(recipes.recipes)
-        res.end()
-        // res.render("recipeList", hbsObject)
+        // res.json(recipes.recipes)
+        // res.end()
+        res.render("layouts/recipeList", hbsObject)
     })
     app.get("/add/recipes", function(req, res){
         res.sendFile("add.html")

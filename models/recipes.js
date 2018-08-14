@@ -6,7 +6,6 @@ function Recipe(ingredientArr, stepArr, name, originalUser){
     if(originalUser){
         this.originalUser = originalUser;
     }
-    recipes.push(this)
 }
 
 function Ingredient(amount, measure, name){
@@ -15,7 +14,16 @@ function Ingredient(amount, measure, name){
     this.name = name;
 }
 recipes.push(new Recipe([new Ingredient(1, 2, "premade burrito")], ["Microwave burrito", "Wait for it to cool"], "microwave burrito", 1));
-console.log(recipes)
+recipes.push(new Recipe([new Ingredient(1, "cup", "dry italian bread crumbs"), new Ingredient(1/2, "cup", "parmasian cheese")],
+["Preheat oven to 400", "Pound chicken breast until equal thickness", "place foil on baking sheet and spray with pam", "dredge chicken in bread crumb mix and place on baking tray","bake 25 minutes or until done"], 
+"baked parmesian chicken", 1));
+
+console.log(JSON.stringify(recipes, null, 2));
+console.log(JSON.stringify(recipes.ingredientArr, null, 2));
+
+// console.log(recipes.ingredientArr);
+
+
 
 module.exports = {
     recipes: recipes,
