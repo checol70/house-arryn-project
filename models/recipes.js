@@ -24,7 +24,6 @@ console.log(JSON.stringify(recipes.ingredientArr, null, 2));
 // console.log(recipes.ingredientArr);
 
 
-
 module.exports = {
     recipes: recipes,
     Recipe: Recipe

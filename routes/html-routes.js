@@ -13,20 +13,20 @@ module.exports = function(app){
         var hbsObject ={
           recipes: recipes.recipes
         }
-        console.log(console.log(recipes.recipes))
+        console.log("AAAAAAAAAAAAAAAAAAAAA" + JSON.stringify(hbsObject.recipes));
         // res.json(recipes.recipes)
         // res.end()
-        res.render("layouts/recipeList", hbsObject)
+        res.render("recipeList", hbsObject)
     })
     app.get("/add/recipes", function(req, res){
         res.sendFile("add.html")
     })
-    app.post("/recipes", function (req, res){
-       +new recipes.Recipe(req.body.ingredients, req.body.steps, req.body.name, req.body.user);
-       console.log(req.body)
-        console.log(recipes.recipes)
-        res.json(req.body);
-    })
+    // app.post("/recipes", function (req, res){
+    //    +new recipes.Recipe(req.body.ingredients, req.body.steps, req.body.name, req.body.user);
+    //    console.log(req.body)
+    //     console.log(recipes.recipes)
+    //     res.json(req.body);
+    // })
     app.put("/recipes/:id", function (req,res){
 
     })

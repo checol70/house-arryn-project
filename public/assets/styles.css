@@ -39,8 +39,8 @@
   #fc6d26;
 
 }
-.recipe-title {
-  font-family: cursive;
-  font-size: 125%;
-  color: black;
+
+.recipeName {
+  font-size: 25px;
+  font-style: cursive;
 }
