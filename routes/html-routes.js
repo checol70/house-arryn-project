@@ -40,7 +40,7 @@ module.exports = function (app) {
     
     //string.split(/([,\n])\w+g/)
 
-    app.get("/add/recipes", function (req, res) {
+    app.get("/add", function (req, res) {
         res.sendFile(path.join(__dirname,"../add.html"))
     })
 

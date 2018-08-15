@@ -6,14 +6,14 @@
 	<!-- Latest compiled and minified CSS -->
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-    <link rel="stylesheet" href="public/assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
 
 </head>
 <body>
 	<nav class="navbar has-shadow">
         <div class="container">
           <div class="navbar-brand"><a class="navbar-item" href="/">
-          <img src="public/assets/Untitled.png"  alt="fork"/>Meal Planner</a>
+          <img src="assets/Untitled.png"  alt="fork"/>Meal Planner</a>
         <div class="navbar-burger">
   <span></span>
   <span></span>
@@ -27,7 +27,7 @@
         <div class="container">
 
 			<a href="/" class="button"> <span class="fa fa-eye"></span> Search Recipe</a>
-			<a href="/all" class="button"> <span class="fa fa-th-list"></span> All Recipes</a>
+			<a href="/recipes" class="button"> <span class="fa fa-th-list"></span> All Recipes</a>
         
         </div>
         <br>
@@ -40,26 +40,27 @@
 						<h3 class="title"><strong>Add Recipes</strong></h3>
 					</div>
 					<div class="card-body">
-						<form action="" method="POST" role="form">
+						<form action="" id="form" method="POST" role="form">
 						
 							<div class="field">
 								<label for="">Recipe Name </label>
-								<input class="input" type="text" placeholder="Fish Tacos">
+								<input class="input" id="name" type="text" placeholder="Fish Tacos">
 							</div>
 
 							<div class="field">
 								<label for="">Ingredients </label>
-								<input class="input" type="text" placeholder="Fish">
+								<input class="input" id="ingredients" type="text" placeholder="Fish">
 							</div>
                             
 							<label for="">Steps </label>
-								<textarea class="textarea" placeholder="Cook it" rows="9"></textarea>
-							
+								<textarea class="textarea" id="steps" placeholder="Cook it" rows="9"></textarea>
+								<br>
+								<input class="button" type="submit" value="Add to recipe book">
 			
 						</form>
-						<br>
+					
 						<div class="text-right">
-                         <input class="button" type="submit" value="Add to recipe book">
+                        
                          
                         </div>
                         <br>
@@ -69,6 +70,11 @@
 		</div>
 	</div>
 
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
 
+	<script src="assets/add.js"></script>
 </body>
 </html>
