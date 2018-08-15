@@ -10,27 +10,30 @@
 
       <ul>
         {{#each recipes}}
-        <br>
+          <br>
 
-        <i class="fas fa-utensils"></i>
-        <div class="block" class="content" is-large>
-          <p>
-            {{name}};
-          </p>
-        </div>
+          <i class="fas fa-utensils"></i>
+
+          <div class="recipeName">
+            <p>
+              {{name}}
+            </p>
+          </div>
 
 
-        <p> Ingredients</p>
-        {{#each ingredientArr}}
-        <p>
-          {{amount}} {{measure}} {{name}};
-        </p>
+
+          <p> Ingredients</p>
+          {{#each ingredientArr}}
+            <p>
+              {{amount}} {{measure}} {{name}};
+            </p>
+          {{/each}}
+          <br>
+          <p>Steps......</p>
+          {{#each stepArr}}
+            <p>{{this}}</p>
+          {{/each}} 
         {{/each}}
-        <br>
-        <p>Steps......</p>
-        {{#each stepArr}}
-        <p>{{this}}</p>
-        {{/each}} {{/each}}
       </ul>
 
     </div>

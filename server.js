@@ -3,15 +3,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-<<<<<<< HEAD
 var db = require("./models");
-=======
-var recipes = require("./models/recipes.js")
-var path = require('path');
-// var db = require("./models");
-var recipArr = recipes.recipes;
-console.log(recipArr)
->>>>>>> bdee4945482f80c2857fcb3abca58c129d2ebdad
 
 var app = express();
 var PORT = process.env.PORT || 3000;
