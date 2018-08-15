@@ -23,6 +23,7 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../index.html"));
     })
 
+<<<<<<< HEAD
     app.get("/recipes", function (req, res) {
         db.Recipe.all().then(rec => {
             console.log(typeof step)
@@ -48,12 +49,23 @@ module.exports = function (app) {
             }
             res.render("layouts/recipeList", hbsObject)
         })
+=======
+    app.get("/recipes", function(req,res){
+        var hbsObject ={
+          recipes: recipes.recipes
+        }
+        console.log("AAAAAAAAAAAAAAAAAAAAA" + JSON.stringify(hbsObject.recipes));
+        // res.json(recipes.recipes)
+        // res.end()
+        res.render("recipeList", hbsObject)
+>>>>>>> bdee4945482f80c2857fcb3abca58c129d2ebdad
     })
 
 
     app.get("/add/recipes", function (req, res) {
         res.sendFile("add.html")
     })
+<<<<<<< HEAD
 
     // name: DataTypes.STRING,
     // ingredients: DataTypes.TEXT,
@@ -72,6 +84,15 @@ module.exports = function (app) {
         })
     })
     app.put("/recipes/:id", function (req, res) {
+=======
+    // app.post("/recipes", function (req, res){
+    //    +new recipes.Recipe(req.body.ingredients, req.body.steps, req.body.name, req.body.user);
+    //    console.log(req.body)
+    //     console.log(recipes.recipes)
+    //     res.json(req.body);
+    // })
+    app.put("/recipes/:id", function (req,res){
+>>>>>>> bdee4945482f80c2857fcb3abca58c129d2ebdad
 
     })
 }
