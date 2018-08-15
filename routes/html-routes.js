@@ -23,26 +23,6 @@ module.exports = function (app) {
         res.sendFile(path.join(__dirname, "../index.html"));
     })
 
-<<<<<<< HEAD
-    app.get("/recipes", function(req,res){
-<<<<<<< HEAD
-        //  var hbsObject ={
-        //      recipes: recipes.recipes
-        //  }
-        console.log(console.log(recipes.recipes))
-        res.json(recipes.recipes)
-        res.end()
-        // res.render("recipeList", hbsObject)
-=======
-        var hbsObject ={
-          recipes: recipes.recipes
-        }
-        console.log(console.log(recipes.recipes))
-        // res.json(recipes.recipes)
-        // res.end()
-        res.render("layouts/recipeList", hbsObject)
->>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
-=======
     app.get("/recipes", function (req, res) {
         db.Recipe.all().then(rec => {
             console.log(typeof step)
@@ -68,7 +48,6 @@ module.exports = function (app) {
             }
             res.render("recipeList", hbsObject)
         })
->>>>>>> c304ff189187b74e2ccd95708168359304ce6ecb
     })
 
 
