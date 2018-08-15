@@ -46,7 +46,7 @@ module.exports = function (app) {
             var hbsObject = {
                 recipes: recips
             }
-            res.render("layouts/recipeList", hbsObject)
+            res.render("recipeList", hbsObject)
         })
     })
 
