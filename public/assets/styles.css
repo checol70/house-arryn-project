@@ -40,6 +40,7 @@
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .recipe-title {
   font-family: cursive;
@@ -47,3 +48,10 @@
   color: black;
 }
 >>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
+=======
+
+.recipeName {
+  font-size: 25px;
+  font-style: cursive;
+}
+>>>>>>> c304ff189187b74e2ccd95708168359304ce6ecb

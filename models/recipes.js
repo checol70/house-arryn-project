@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var recipes = []
 function Recipe(ingredientArr, stepArr, name, originalUser){
     this.ingredientArr = ingredientArr;
@@ -36,4 +37,16 @@ console.log(JSON.stringify(recipes.ingredientArr, null, 2));
 module.exports = {
     recipes: recipes,
     Recipe: Recipe
+=======
+
+module.exports = function(sequelize, DataTypes){
+    var Recipe = sequelize.define("Recipe",{
+        name: DataTypes.STRING,
+        ingredients: DataTypes.TEXT,
+        steps: DataTypes.TEXT,
+        originalUser: DataTypes.INTEGER
+    })
+
+    return Recipe;
+>>>>>>> c304ff189187b74e2ccd95708168359304ce6ecb
 }
