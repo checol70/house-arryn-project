@@ -3,11 +3,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
-var recipes = require("./models/recipes.js")
-var path = require('path');
-// var db = require("./models");
-var recipArr = recipes.recipes;
-console.log(recipArr)
+var db = require("./models");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -42,8 +38,8 @@ routes(app);
 require("./routes/html-routes.js")(app);
 // require("./routes/api-routes.js")(app);
 
-// db.sequelize.sync().then(function(){
+db.sequelize.sync().then(function(){
     app.listen(PORT, function(){
         console.log("app listening at localhost:" + PORT)
     })
-// })
+})
