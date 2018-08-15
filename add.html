@@ -6,14 +6,14 @@
 	<!-- Latest compiled and minified CSS -->
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
-    <link rel="stylesheet" href="public/assets/styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
 
 </head>
 <body>
 	<nav class="navbar has-shadow">
         <div class="container">
           <div class="navbar-brand"><a class="navbar-item" href="/">
-          <img src="public/assets/Untitled.png"  alt="fork"/>Meal Planner</a>
+          <img src="assets/Untitled.png"  alt="fork"/>Meal Planner</a>
         <div class="navbar-burger">
   <span></span>
   <span></span>
@@ -54,12 +54,13 @@
                             
 							<label for="">Steps </label>
 								<textarea class="textarea" id="steps" placeholder="Cook it" rows="9"></textarea>
-							
+								<br>
+								<input class="button" type="submit" value="Add to recipe book">
 			
 						</form>
-						<br>
+					
 						<div class="text-right">
-                         <input class="button" type="submit" value="Add to recipe book">
+                        
                          
                         </div>
                         <br>
@@ -74,13 +75,6 @@
 	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 	crossorigin="anonymous"></script>
 
-	<script> $("#form").on("submit", (event)=>{
-		event.preventDefault();
-	
-		var name = $("#name").val().trim();
-		var ingredients = $("#ingredients").val().trim();
-		var steps = $("#steps").val().trim();
-		console.log(name, ingredients, steps)
-	})</script>
+	<script src="assets/add.js"></script>
 </body>
 </html>
