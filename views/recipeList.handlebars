@@ -1,56 +1,3 @@
-<<<<<<< HEAD:views/layouts/recipeList.handlebars
-<<<<<<< HEAD
-<h1>Recipes!</h1>
-
-<h2>List of Recipes!</h2>
-{{!-- Object received from the get/code { ingredientArr:[ { amount: measure: name: }] stepArr:[ // this is full of strings
-in order. ], name://string for the recipe name. originalUser: // int for the users array } --}}
-
-<ul>
-  {{#each recipes}}
-  <p>
-    Recipe name: {{name}};
-  </p>
-  <p> Ingredients</p>
-  {{#each ingredientArr}}
-  <p>
-    {{amount}} + " " + {{measure}} + " " + {{name}};
-  </p>
-  <p> Steps</p>
-  {{#each stepArr}}
-  <p> step </p>
-  {{/each}}
-  {{/each}} 
-  {{/each}}
-</ul>
-=======
- {{!--
-<section class="section">
-  <div class="container">
-    <h1 class="title">
-      Hello World
-    </h1>
-    <p class="subtitle">
-      My first website with
-      <strong>Bulma</strong>!
-    </p>
-  </div>
-</section> --}} {{!--
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Primary title
-      </h1>
-      <h2 class="subtitle">
-        Primary subtitle
-      </h2>
-    </div>
-  </div>
-</section> --}}
-
-=======
->>>>>>> c304ff189187b74e2ccd95708168359304ce6ecb:views/recipeList.handlebars
 <section class="hero is-primary">
   <div class="hero-body">
     <div class="container">
@@ -88,4 +35,3 @@ in order. ], name://string for the recipe name. originalUser: // int for the use
     </div>
   </div>
 </section>
->>>>>>> b9c3396b824bf5530ec2f33f92b996121bebb75f
