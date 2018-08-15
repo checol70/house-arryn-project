@@ -11,12 +11,6 @@ function Recipe(ingredientArr, stepArr, name, originalUser) {
     }
 }
 
-function Ingredient(amount, measure, name) {
-    this.amount = amount;
-    this.measure = measure;
-    this.name = name;
-}
-
 module.exports = function (app) {
     app.get("/", function (req, res) {
         // random recipe stuff can go here.
@@ -28,18 +22,12 @@ module.exports = function (app) {
             console.log(typeof step)
             var recips = []
             for (var i = 0; i < rec.length; i++) {
-                var ing = []
                 var ingred = rec[i].ingredients
-                parsedIng = JSON.parse(ingred)
+
+                var parsedIng = JSON.parse(ingred)
                 var step = JSON.parse(rec[i].steps)
-
-                for (var j = 0; j < parsedIng.length; j++) {
-                    ing.push(new Ingredient(parsedIng[j].amount, parsedIng[j].measure, parsedIng[j].name));
-                }
                 
-                console.log("ing =", ing)
-                recips.push(new Recipe(ing, step, rec[i].name, rec[i].originalUser));
-
+                recips.push(new Recipe(parsedIng, step, rec[i].name, rec[i].originalUser));
             }
             // steps not set right here
             console.log(recips)
@@ -49,10 +37,11 @@ module.exports = function (app) {
             res.render("recipeList", hbsObject)
         })
     })
-
+    
+    //string.split(/([,\n])\w+g/)
 
     app.get("/add/recipes", function (req, res) {
-        res.sendFile("add.html")
+        res.sendFile(path.join(__dirname,"../add.html"))
     })
 
     // name: DataTypes.STRING,
