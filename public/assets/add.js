@@ -65,6 +65,6 @@ $("#good").on("click", function (event) {
         })
 });
 
-$("#bad").on("click", function (event) {
+$(".bad").on("click", function (event) {
     $("#modal-ter").removeClass("is-active");
 })
