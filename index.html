@@ -10,6 +10,7 @@
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
     <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                         <div class="card-content">
                             <div class="content">
                                 <div class="control has-icons-left has-icons-right search-field">
-                                    <input class="input is-large" type="text" placeholder="Fish Sticks" v-model="search" />
+                                    <input class="input is-large" type="text" id="inputSearch" placeholder="Fish Sticks" v-model="search" />
                                     <span class="icon is-medium is-left">
                                         <i class="fa fa-search"></i>
                                     </span>
@@ -55,7 +56,7 @@
         <section class="hero">
             <div class="container">
                     <div class="control">
-                            <a href="/recipes"<button class="button is-primary" id=listRecipes>List Recipes</button></a>
+                            <a href="/recipes"<button class="button is-primary" id="listRecipes">List All Recipes</button></a>
                           </div>
             </div>
 
@@ -65,7 +66,8 @@
         <section class="hero">
             <div class="container">
                     <div class="control">
-                            <a href="/recipes/:name"<button class="button is-primary" id=listRecipes>List Recipes</button></a>
+                            <!-- <a href="/recipes/: + inputSearch.val" <button class="button is-primary" id=searchRecipes>Search Recipes</button></a> -->
+                            <button class="button is-primary" id="searchRecipes">Search Recipes</button>
                           </div>
             </div>
 
@@ -94,6 +96,8 @@
 
     </footer>
     </div>
+    
+    <script src="/assets/main.js"></script>
 </body>
 
 </html>
