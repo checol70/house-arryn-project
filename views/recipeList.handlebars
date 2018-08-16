@@ -1,17 +1,36 @@
-<section class="hero is-primary">
+<section class="hero">
+  <nav class="navbar has-shadow has-fixed-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+          <i class="fas fa-utensils"></i>
+          Recipes</a>
+
+      </div>
+    </div>
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <span>
+          <a href="/">Home </a>
+        </span>
+
+      </div>
+    </div>
+
+  </nav>
+
   <div class="hero-body">
     <div class="container">
-      <h1 class="title"> Recipes
-      </h1>
-      <br> {{!-- Object received from the get/code { ingredientArr:[ ingredients ] stepArr:[ // this is full of
-      strings in order. ], name://string for the recipe name. originalUser: // int for the users array } --}}
+
+      <br> {{!-- Object received from the get/code { ingredientArr:[ ingredients ] stepArr:[ // this is full of strings in order.
+      ], name://string for the recipe name. originalUser: // int for the users array } --}}
 
       <ul>
         {{#each recipes}}
         <br>
 
         <i class="fas fa-utensils"></i>
-        
+
         <div class="recipeName">
           <p>
             {{name}}
