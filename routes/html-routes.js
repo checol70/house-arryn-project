@@ -38,6 +38,7 @@ module.exports = function (app) {
         })
     })
     //Added logic for search for a specific recipe name $or can be used for mulitple search items
+    //Logic added to search for name in either name or ingredients fields
     app.get("/recipes/:name", function (req, res) {
         db.Recipe.findAll({
             where: {
