@@ -28,6 +28,10 @@ module.exports = function (app) {
 
                 recips.push(new Recipe(parsedIng, step, rec[i].name, rec[i].originalUser));
             }
+            
+            recips.sort(function(a, b){
+                return a.name.localeCompare(b.name)
+            })
             // steps not set right here
             var hbsObject = {
                 recipes: recips
@@ -59,6 +63,12 @@ module.exports = function (app) {
 
                 recips.push(new Recipe(parsedIng, step, rec[i].name, rec[i].originalUser));
             }
+
+            
+            recips.sort(function(a, b){
+                return a.name.localeCompare(b.name)
+            })
+
             var hbsObject = {
                 recipes: recips
             }
