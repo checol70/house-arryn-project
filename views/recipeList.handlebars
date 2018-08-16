@@ -1,37 +1,59 @@
-<section class="hero is-primary">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title"> Recipes
-      </h1>
-      <br> {{!-- Object received from the get/code { ingredientArr:[ ingredients ] stepArr:[ // this is full of
-      strings in order. ], name://string for the recipe name. originalUser: // int for the users array } --}}
+<link rel="stylesheet" href="assets/styles.css">
 
-      <ul>
-        {{#each recipes}}
-        <br>
+<section class="hero">
 
-        <i class="fas fa-utensils"></i>
-        
-        <div class="recipeName">
-          <p>
-            {{name}}
-          </p>
+   
+       <nav id="nav" class="navbar is-fixed-top">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">
+                        <img src="assets/Untitled.png" alt="fork" />Recipe-oogle</a>
+                   
+                     
+                    </div>
+                </div>
+            </div>
+                        <div class="navbar-end">
+                        <div class="navbar-item">
+                        <span><a href="/" >Home </a></span>
+                         </div>
         </div>
+        </nav>
+       
+
+ <div class="hero-body">
+   <div class="container">
+     <h1 class="title"> Recipes
+     </h1>
+     <br> {{!-- Object received from the get/code { ingredientArr:[ ingredients ] stepArr:[ // this is full of
+     strings in order. ], name://string for the recipe name. originalUser: // int for the users array } --}}
+
+     <ul>
+       {{#each recipes}}
+       <br>
+
+       <i class="fas fa-utensils"></i>
+
+       <div class="recipeName">
+         <p>
+           {{name}}
+         </p>
+       </div>
 
 
-        <p> Ingredients</p>
-        {{#each ingredientArr}}
-        <p>
-          {{this}}
-        </p>
-        {{/each}}
-        <br>
-        <p>Steps......</p>
-        {{#each stepArr}}
-        <p>{{this}}</p>
-        {{/each}} {{/each}}
-      </ul>
+       <p> Ingredients</p>
+       {{#each ingredientArr}}
+       <p>
+         {{this}}
+       </p>
+       {{/each}}
+       <br>
+       <p>Steps......</p>
+       {{#each stepArr}}
+       <p>{{this}}</p>
+       {{/each}} {{/each}}
+     </ul>
 
-    </div>
-  </div>
+   </div>
+ </div>
 </section>
