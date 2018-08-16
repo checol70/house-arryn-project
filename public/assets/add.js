@@ -6,21 +6,16 @@ var obj = {
 
 }
 
-console.log("scrpit start")
 $("#form").on("submit", (event) => {
-    console.log("SUBMIT DETECTED");
     event.preventDefault();
 
     var name = $("#name").val().trim();
     var ingredients = $("#ingredients").val().trim();
     var steps = $("#steps").val().trim();
-    console.log(name, ingredients, steps);
 
     var ing = ingredients.split(","
     );
-    console.log(ing)
     var stps = steps.split("\n");
-    console.log(stps)
 
 
     $("#modal-ter").addClass("is-active");
@@ -28,6 +23,9 @@ $("#form").on("submit", (event) => {
     $("#recipe-name").text(name)
     var ingHolder = $("#ing-holder");
     var stepHolder = $("#step-holder");
+
+    ingHolder.empty();
+    stepHolder.empty();
 
     ing.forEach((e) => {
         var li = $("<li>").text(e);
@@ -53,11 +51,7 @@ $("#good").on("click", function (event) {
         data: obj
     }).then(
         function () {
-
-            console.log("new recipe");
             location.reload();
-
-
         })
 });
 $("#bad").on("click", function (event) {

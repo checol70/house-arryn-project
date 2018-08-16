@@ -19,7 +19,6 @@ module.exports = function (app) {
 
     app.get("/recipes", function (req, res) {
         db.Recipe.findAll({}).then(rec => {
-            console.log(typeof step)
             var recips = []
             for (var i = 0; i < rec.length; i++) {
                 var ingred = rec[i].ingredients
@@ -30,7 +29,6 @@ module.exports = function (app) {
                 recips.push(new Recipe(parsedIng, step, rec[i].name, rec[i].originalUser));
             }
             // steps not set right here
-            console.log(recips)
             var hbsObject = {
                 recipes: recips
             }
@@ -51,7 +49,6 @@ module.exports = function (app) {
                 ]
             }
         }).then(rec => {
-            console.log(typeof step)
             var recips = []
             for (var i = 0; i < rec.length; i++) {
                 var ingred = rec[i].ingredients
@@ -61,8 +58,6 @@ module.exports = function (app) {
 
                 recips.push(new Recipe(parsedIng, step, rec[i].name, rec[i].originalUser));
             }
-            // steps not set right here
-            console.log(recips)
             var hbsObject = {
                 recipes: recips
             }
@@ -87,7 +82,6 @@ module.exports = function (app) {
 
 
     app.post("/recipes", function (req, res) {
-        console.log(req.body);
         db.Recipe.create({
             name: req.body.name,
             ingredients: JSON.stringify(req.body.ingredients),
