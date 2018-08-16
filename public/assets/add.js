@@ -13,6 +13,10 @@ $("#form").on("submit", (event) => {
     var ingredients = $("#ingredients").val().trim();
     var steps = $("#steps").val().trim();
 
+    if(name.includes(/([*=])/g)||ingredients.includes(/([*=])/g)||steps.includes(/([*=])/g)){
+        $("#invalid").addClass("is-active");
+    }
+
     var ing = ingredients.split(","
     );
     var stps = steps.split("\n");
@@ -43,7 +47,9 @@ $("#form").on("submit", (event) => {
     obj.steps = stps;
 
 })
-
+$("#close-warning").on("click", function(event){
+    $("#invalid").removeClass("is-active");
+})
 
 $("#good").on("click", function (event) {
     $.ajax("/recipes", {
