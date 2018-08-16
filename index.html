@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Meal Planner</title>
+    <title>Recipe-oogle</title>
 
 
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css'>
@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="">
-                        <img src="assets/Untitled.png" alt="fork" />Meal Planner</a>
+                        <img src="assets/Untitled.png" alt="fork" />Recipe-oogle</a>
                     <div class="navbar-burger">
                         <span></span>
                         <span></span>
@@ -53,40 +53,56 @@
             </div>
         </section>
 
-        
 
 
-        <section class="hero">
-            <div class="container">
-                    <div class="control">
-                            <a href="/recipes"<button class="button" id="listRecipes">List All Recipes</button></a>
-                          </div>
-            </div>
 
-        </section>
+
+
         <!-- Add button to list searched recipes -->
 
 
         <section class="hero">
             <div class="container">
-                    <div class="control">
+                <div class="control">
 
-                            <a href="/add" class="button"> <span class="fa fa-eye"></span> Add Recipe</a>
-			                <a href="/recipes" class="button"> <span class="fa fa-th-list"></span> All Recipes</a>
+                    <a href="/add" class="button">
+                        <span class="fa fa-eye"></span> Add Recipe</a>
+                    <a href="/recipes" class="button">
+                        <span class="fa fa-th-list"></span> All Recipes</a>
 
-                            <button class="button" id="searchRecipes"> <span class="fa fa-search"></span>Search Recipes</button>
 
-                          </div>
+                    <button class="button" id="searchRecipes">
+                        <span class="fa fa-search"></span>Search Recipes</button>
+
+                </div>
             </div>
 
         </section>
 
+
+    </div>
+    <div class="modal is" id="invalid">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Invalid input</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <p>You cannot use the characters = or *</p>
+
+            </section>
+            <footer class="modal-card-foot">
+                <button id="close-warning" class="button is-success">OK</button>
+            </footer>
+        </div>
     </div>
     <footer>
 
     </footer>
     </div>
-    
+
     <script src="/assets/main.js"></script>
 </body>
 
